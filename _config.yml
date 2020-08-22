@@ -1,0 +1,86 @@
+# Site settings
+title: kleczkow.ski
+description: >- # site description
+  Hello, I'm Haskell Developer based in Warsaw.
+  I'm functional programming enthusiast.
+lang: en-US # default lang
+timezone: Europe/Warsaw # set your timezone
+# image: assets/img/ogp.png # This image used for Open Graph more info https://ogp.me/
+repo: https://github.com/kleczkowski/kleczkowski.github.io # site repo [optional]
+mode: dark # default theme "dark" | "light"
+
+# Profile settings
+author:
+  name: Konrad Kleczkowski # author name
+  bio: >- # tell to the world
+    Hello, I'm Haskell Developer based in Warsaw.
+    I'm functional programming enthusiast.
+  username: kleczkowski # author username
+  github: kleczkowski
+#  twitter: twitter_username
+  facebook: panjaper
+  email: konrad@kleczkow.ski # your contact adress
+  avatar: /assets/img/avatar.jpg # change with your own avatar
+
+# Url settings
+url: "https://kleczkow.ski"
+baseurl:
+permalink: /:title/
+google_analytics: UA-176091868-1
+fb_appid:
+
+# Collection setting
+collections:
+  posts:
+    output: true
+
+# Markdown settings
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  syntax_highlighter: rouge
+
+# Default front matter
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: post
+      comments: false
+
+# Jekyll Compose default front matter
+jekyll_compose:
+  post_default_front_matter:
+    modified:
+    tags: []
+    description:
+  draft_default_front_matter:
+    modified:
+    tags: []
+    description:
+
+# Build settings
+sass:
+  style: compressed
+
+include:
+  - _redirects
+  - .htaccess
+
+exclude:
+  - CNAME
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - CHANGELOG.md
+  - README.md
+  - node_modules
+  - CODE_OF_CONDUCT.md
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-postfiles
+  - jekyll-seo-tag
+  - jekyll-katex
