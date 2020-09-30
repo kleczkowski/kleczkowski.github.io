@@ -46,6 +46,7 @@ module Control.Concurrent.Actor
   )
 where
 
+import Control.Monad
 import Control.Concurrent
 import Control.Concurrent.STM
 ```
@@ -81,10 +82,10 @@ by executing `IO` actions.
 spawn :: Behaviour msg -> IO (ActorRef msg)
 spawn b0 = do
   mbox <- newTQueueIO
-  let go (Behaviour b) = do
+  let go (Behaviour b) = void $ do
     msg <- atomically (readTQueue mbox)
     b msg >>= go
-  pid  <- forkIO (loop b0)
+  pid  <- forkIO (go b0)
   pure (ActorRef pid mbox)
 ```
 
@@ -130,15 +131,14 @@ fileReader = whenClosed
       SendLine replyTo -> do
         line <- hGetLine h
         replyTo `send` GotLine line
-        pure (whenClosed h)
+        pure (whenOpened h)
       CloseFile -> do
         hClose h
         pure whenClosed
       _ -> error "inappropiate state"
 ```
 
-(Of course, we can handle notion of partial function 
-use much better than now, but this could be another topic for next article).
+Then we can use `spawn` to get the instance of actor pointed by `ActorRef`.
 
 # Summary
 
