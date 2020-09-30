@@ -40,6 +40,7 @@ So we can start with our module preamble:
 ```haskell
 module Control.Concurrent.Actor
   ( ActorRef (refId)
+  , Behaviour (..)
   , spawn
   , send
   )
