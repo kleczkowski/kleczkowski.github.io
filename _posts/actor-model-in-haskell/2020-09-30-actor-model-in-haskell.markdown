@@ -9,8 +9,7 @@ We'll take a look at very popular way to describe concurrent computations.
 Actor model is mainly based on \( \pi \)-calculus, well known theoretical model
 developed by R. Milner.
 
-Main principle of this model is _everything is model_. Every thread-like-being
-is an actor. So what could actor do?
+Main principle of this model is _everything is an actor_. So what could actor do?
 
 1. Actor can send message to other actor.
 2. Actor can receive message from other actor.
@@ -30,8 +29,8 @@ To implement this queue we can use software transaction memory to do this safely
 STM gives us a way of controlling memory using transactions. 
 
 Transaction principle says us if we execute multiple instructions using transaction
-either none or each will be preformed to do an efect (e.g. enqueuing multiple messages).
-This also ensures us that no one modifies target state, so there's no possibility
+either none or each will be preformed to do a desirable efect (e.g. enqueuing multiple messages).
+STM also ensures us that no one modifies target state, so there's no possibility
 to read corrupted state.
 
 We'll use `TQueue` from `stm` package to use it as data structure that allows to enqueue messages.
@@ -144,3 +143,7 @@ use much better than now, but this could be another topic for next article).
 
 This model is very popular among other programming languages such as Scala or C#, because allows to decopule
 all system parts using transparent way to communicate between them. 
+
+As usual, with Haskell we can get simple ideas working with simple implementations. Of course, this is only
+the taste how actor-based models could look like. The way to improve this implementation is tightening `Behaviour`
+type to eliminate or mitigate _partialness_ of behaviours.
