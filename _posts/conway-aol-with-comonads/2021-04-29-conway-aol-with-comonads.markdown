@@ -126,7 +126,7 @@ You can compare this implementation with the explanation of `extend` above.
 ## Game of Life v. `Store`
 
 Game of Life, first of all, is a cellular automata. It has
-an infinite discrete plain filled with two kind of cells --- dead or alive.
+an infinite discrete plane filled with two kind of cells --- dead or alive.
 Each cell in each step is transformed by provided rules, and these rules are:
 * if current cell is dead and has three alive neighbours, then cell becomes alive;
 * if current cell is alive and has two or three alive neighbours, then cell still is alive;
