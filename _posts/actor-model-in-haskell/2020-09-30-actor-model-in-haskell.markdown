@@ -142,7 +142,7 @@ Then we can use `spawn` to get the instance of actor pointed by `ActorRef`.
 
 # Summary
 
-This model is very popular among other programming languages such as Scala or C#, because allows to decopule
+This model is very popular among other programming languages such as Scala or C#, because it allows to decouple
 all system parts using transparent way to communicate between them. 
 
 As usual, with Haskell we can get simple ideas working with simple implementations. Of course, this is only
