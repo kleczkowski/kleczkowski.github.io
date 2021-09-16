@@ -3,10 +3,11 @@ title: Actor Model in Haskell
 date: 2020-09-30 16:40:00 +02:00
 tags: [haskell, actor model, concurrency, short article]
 description: Learn how we can achive simple actor model using Haskell
+usemathjax: true
 ---
 
 We'll take a look at very popular way to describe concurrent computations.
-Actor model is mainly based on \( \pi \)-calculus, well known theoretical model
+Actor model is mainly based on $$\pi$$-calculus, well known theoretical model
 developed by R. Milner.
 
 Main principle of this model is _everything is an actor_. So what could actor do?
