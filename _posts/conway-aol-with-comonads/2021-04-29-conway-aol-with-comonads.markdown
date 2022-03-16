@@ -118,8 +118,8 @@ Shall we implement `Comonad` type class? Let's try implement `extract`.
 extract :: Store s a -> a
 extract (Store idx get) = get idx
 
-duplicate :: (Store s a -> b) -> Store s a -> Store s b
-duplicate f (Store idx get) = Store idx (\i -> f (Store i get))
+extend :: (Store s a -> b) -> Store s a -> Store s b
+extend f (Store idx get) = Store idx (\i -> f (Store i get))
 ```
 You can compare this implementation with the explanation of `extend` above.
 
