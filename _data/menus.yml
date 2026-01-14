@@ -1,0 +1,19 @@
+- title: home
+  url: /
+  external: false
+
+- title: about
+  url: /about/
+  external: false
+
+# - title: notes
+#   url: /notes/
+#   external: false # set true if you using external link, see bellow
+
+# - title: resume
+#   url: /resume
+#   external: false
+
+- title: github
+  url: https://github.com/kleczkowski
+  external: true
